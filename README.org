@@ -1,0 +1,5 @@
+#+title: ~symbol-processing~ package
+
+
+Package for simple symbol tests and transformations.  It is inspired
+by the symbol manipulation ideas in "Let over Lambda" by Doug Hoyt.
