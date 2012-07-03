@@ -1,6 +1,6 @@
 ;;;; symbol-processing.asd
 
-(asdf:defsystem #:symbol-name-processing
+(asdf:defsystem #:symbol-name-queries
   :serial t
   :description "Manipulation of symbol names"
   :author "Mirko Vukovic <mirko.vukovic@gmail.com>"
@@ -10,6 +10,6 @@
                #:anaphora
                #:split-sequence
                #:lisp-unit)
-  :components ((:file "symbol-processing-package-def")
-               (:file "symbol-processing")))
+  :components ((:file "symbol-name-queries-package-def")
+               (:file "symbol-name-queries")))
 
