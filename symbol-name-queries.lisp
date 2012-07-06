@@ -76,6 +76,17 @@ character?.  If `s' is not symbol, return nil"
 		   :end1 2)))
     (t nil)))
 
+(defun @!-symbol-p (s)
+  "Does the symbol start with `@!'.  Return nil if s is not a symbol"
+  (typecase s
+    (symbol
+     (and (> (length (symbol-name s)) 2)
+	  (string= (symbol-name s)
+		   "@!"
+		   :start1 0
+		   :end1 2)))
+    (t nil)))
+
 (defun @#-symbol-p (s)
   "Does the symbol start with `@#'.  Return nil if s is not a symbol"
   (typecase s

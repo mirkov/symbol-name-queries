@@ -1,0 +1,5 @@
+2012-07-06  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* my-utils/symbol-name-queries/symbol-name-queries.lisp
+	(@!-symbol-p): Added new function for mv-grid-utils
+
