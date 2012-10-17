@@ -76,15 +76,23 @@ character?.  If `s' is not symbol, return nil"
 		   :end1 2)))
     (t nil)))
 
-(defun @!-symbol-p (s)
-  "Does the symbol start with `@!'.  Return nil if s is not a symbol"
+(defun @!-symbol-p (s &optional length)
+  "Does the symbol start with `@!'.  Return nil if s is not a symbol
+
+Keyword length can specify a required length.  If NIL, length must be
+greater than two.  If t, length must be equal to 2.  If integer,
+length specifies the symbol length minus 2"
   (typecase s
     (symbol
-     (and (> (length (symbol-name s)) 2)
-	  (string= (symbol-name s)
-		   "@!"
-		   :start1 0
-		   :end1 2)))
+     (let* ((name (symbol-name s))
+	    (name-length (length name)))
+       (and (cond
+	      ((null length) (> name-length 2))
+	      ((integerp length) (= name-length length))
+	      (t (= name-length 2)))
+	    (string= name "@!"
+		     :start1 0
+		     :end1 2))))
     (t nil)))
 
 (defun @#-symbol-p (s)
